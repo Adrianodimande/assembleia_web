@@ -1,0 +1,78 @@
+
+
+  <!-- Botão de Cadastro -->
+  <div class="flex justify-end mb-4">
+    <a
+      routerLink="/member/create"
+      class="py-3 px-6 bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-300"
+    >
+      Cadastrar Membro
+    </a>
+  </div>
+
+  <!-- Formulário de Busca -->
+  <form [formGroup]="formGroupSearch"  class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+    <input
+      type="text"
+      placeholder="Pesquisar membro..."
+      formControlName="txtSearch"
+      class="flex-1 p-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+    />
+    <button
+      type="button"
+      (click)="search()"
+      class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition-colors duration-200"
+    >
+      Buscar
+    </button>
+  </form>
+
+  <!-- Tabela Moderna -->
+  <div class="overflow-x-auto rounded-xl shadow-lg bg-white dark:bg-gray-800">
+    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+      <thead class="bg-gray-50 dark:bg-gray-700">
+        <tr>
+          <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
+            <input type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600">
+          </th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Nome</th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Apelido</th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Sexo</th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Estado Civil</th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Contacto</th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Email</th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Congregação</th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Batizado</th>
+          <th class="px-6 py-3 text-left text-lg font-medium text-gray-500 uppercase dark:text-gray-400">Ações</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+        @for(item of membersData; track item.id){
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <td class="px-4 py-3">
+            <input type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600">
+          </td>
+          <td class="px-6 py-3 font-medium text-gray-900 dark:text-white">{{ item.firstName }}</td>
+          <td class="px-6 py-3 text-gray-600 dark:text-gray-300">{{ item.lastName }}</td>
+          <td class="px-6 py-3 text-gray-600 dark:text-gray-300">{{ item.gender }}</td>
+          <td class="px-6 py-3 text-gray-600 dark:text-gray-300">{{ item.maritalStatus }}</td>
+          <td class="px-6 py-3 text-gray-600 dark:text-gray-300">{{ item.phone }}</td>
+          <td class="px-6 py-3 text-gray-600 dark:text-gray-300">{{ item.email }}</td>
+          <td class="px-6 py-3 text-gray-600 dark:text-gray-300">{{ item.congregation }}</td>
+          <td class="px-6 py-3">
+            <span class="px-3 py-1 rounded-full text-white text-sm font-medium {{ item.baptized ? 'bg-green-600' : 'bg-red-500' }}">
+              {{ item.baptized ? 'Sim' : 'Não' }}
+            </span>
+          </td>
+          <td class="px-6 py-3 flex gap-3">
+            <a routerLink="/member/update/{{ item.id }}" class="text-orange-500 hover:text-orange-600 transition-colors"><i class="fa-solid fa-pen"></i></a>
+            <button (click)="deleteMember(item.id)" class="hover:text-red-600 transition-colors">
+              <i class="fa-solid fa-trash text-red-500"></i>
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+

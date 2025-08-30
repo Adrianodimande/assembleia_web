@@ -1,0 +1,71 @@
+<!-- Sidebar -->
+<aside
+  class="w-64 bg-gradient-to-tr from-gray-900 to-gray-700 text-white flex flex-col h-full shadow-lg rounded-xl"
+>
+  <div class="p-6 border-b border-purple-600">
+    <h1 class="text-2xl font-bold">Painel Administrativo</h1>
+    <p class="text-sm text-purple-300 mt-1">Seja bem-vindo(a)</p>
+  </div>
+
+  <nav class="flex-1 px-4 py-6 space-y-3">
+    <!-- Dashboard -->
+    <a
+      routerLink="/"
+      class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-800 transition"
+    >
+      <i class="fas fa-tachometer-alt text-lg"></i>
+      <span>Dashboard</span>
+    </a>
+
+    <!-- Membros -->
+    <a
+      routerLink="/member"
+      class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-800 transition"
+    >
+      <i class="fas fa-book-reader text-lg"></i>
+      <span>Membros</span>
+    </a>
+
+    <!-- Congregações -->
+    <a
+      routerLink="/congregation"
+      class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-800 transition"
+    >
+      <i class="fas fa-church text-lg"></i>
+      <span>Congregações</span>
+    </a>
+
+    <!-- Usuários -->
+    <a
+      routerLink="/user"
+      class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-800 transition"
+    >
+      <i class="fas fa-users text-lg"></i>
+      <span>Usuários</span>
+    </a>
+
+    <!-- Configurações -->
+    <a
+      href="#"
+      class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-800 transition"
+    >
+      <i class="fas fa-cog text-lg"></i>
+      <span>Configurações</span>
+    </a>
+  </nav>
+
+  <!-- Área do usuário e sair -->
+  <div class="p-6 border-t border-purple-600 space-y-3">
+    <p class="text-sm text-purple-300">Logado como:</p>
+    <h3 class="font-semibold">Adriano Dimande</h3>
+
+    <!-- Botão Sair -->
+    <a
+      routerLink="/auth/signin"
+      class="w-full flex items-center justify-center space-x-2 p-3 mt-4 rounded-lg bg-red-600 hover:bg-red-700 transition text-white font-semibold"
+    >
+      <i class="fas fa-sign-out-alt text-lg"></i>
+      <span>Sair</span>
+    </a>
+  </div>
+</aside>

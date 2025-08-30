@@ -1,0 +1,61 @@
+<div class="min-h-screen flex items-center justify-center ">
+  <div class="w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl shadow-xl bg-gradient-to-r from-purple-800 via-indigo-800 to-purple-900 p-6">
+    
+    <!-- Ícone -->
+    <div class="text-center mb-6">
+      <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-white/20">
+        <i class="bi bi-cross text-white text-3xl"></i>
+      </div>
+      <h2 class="text-2xl font-bold text-white mt-4">Criar Conta</h2>
+      <p class="text-sm text-gray-200">Cadastre sua congregação e senha para entrar na fé</p>
+    </div>
+
+    <!-- Formulário -->
+    <form>
+      <!-- Congregação -->
+      <div class="mb-4">
+        <label class="block text-gray-200 mb-1">Congregação</label>
+        <input 
+          type="text" 
+          placeholder="Digite sua congregação"
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/80 text-gray-800 focus:ring-2 focus:ring-purple-500 outline-none"
+        />
+      </div>
+
+      <!-- Senha -->
+      <div class="mb-4">
+        <label class="block text-gray-200 mb-1">Senha</label>
+        <input 
+          type="password" 
+          placeholder="Digite sua senha"
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/80 text-gray-800 focus:ring-2 focus:ring-purple-500 outline-none"
+        />
+      </div>
+
+      <!-- Confirmar Senha -->
+      <div class="mb-4">
+        <label class="block text-gray-200 mb-1">Confirmar Senha</label>
+        <input 
+          type="password" 
+          placeholder="Confirme sua senha"
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white/80 text-gray-800 focus:ring-2 focus:ring-purple-500 outline-none"
+        />
+      </div>
+
+      <!-- Botão -->
+      <button 
+        type="submit"
+        class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-lg hover:opacity-90 transition">
+        Criar Conta
+      </button>
+
+      <!-- Link para login -->
+      <div class="mt-4 text-center">
+        <p class="text-sm text-gray-200">
+          Já tem uma conta? 
+          <a routerLink="/auth/signin" class="hover:underline font-semibold text-white">Entrar</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

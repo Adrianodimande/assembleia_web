@@ -1,0 +1,176 @@
+<form
+  class="max-w-5xl mx-auto p-8 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700"
+  [formGroup]="formGroupMember"
+  (ngSubmit)="onSubmitCreateOrUpdate()"
+>
+  <!-- Título -->
+  <h2 class="text-3xl font-extrabold text-blue-700 dark:text-blue-400 mb-8 text-center tracking-tight">
+    Cadastro de Membro
+  </h2>
+
+  <!-- Campos em grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <!-- Nome -->
+    <div>
+      <label for="name" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Nome
+      </label>
+      <input
+        type="text"
+        id="name"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        placeholder="Digite o nome"
+        formControlName="FirstName"
+        required
+      />
+    </div>
+
+    <!-- Apelido -->
+    <div>
+      <label for="last-name" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Apelido
+      </label>
+      <input
+        type="text"
+        id="last-name"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        placeholder="Digite o apelido"
+        formControlName="LastName"
+        required
+      />
+    </div>
+
+    <!-- Data de nascimento -->
+    <div>
+      <label for="date" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Data de Nascimento
+      </label>
+      <input
+        type="date"
+        id="Date"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        formControlName="Date"
+        required
+      />
+    </div>
+
+    <!-- Gênero -->
+    <div>
+      <label for="gender" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Gênero
+      </label>
+      <select
+        id="gender"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        formControlName="Gender"
+      >
+        <option [ngValue]="null">Selecione</option>
+        <option [ngValue]="0">Masculino</option>
+        <option [ngValue]="1">Feminino</option>
+        <option [ngValue]="2">Outro</option>
+      </select>
+    </div>
+
+    <!-- Estado Civil -->
+    <div>
+      <label for="maritalState" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Estado Civil
+      </label>
+      <select
+        id="maritalState"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        formControlName="MaritalStatus"
+      >
+        <option [ngValue]="null">Selecione</option>
+        <option [ngValue]="0">Solteiro</option>
+        <option [ngValue]="1">Casado</option>
+        <option [ngValue]="2">Viúvo</option>
+        <option [ngValue]="3">Divorciado</option>
+      </select>
+    </div>
+
+    <!-- Endereço -->
+    <div>
+      <label for="Endereco" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Endereço
+      </label>
+      <input
+        type="text"
+        id="Endereco"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        placeholder="Exemplo: Maputo avenida Samora Machel"
+        formControlName="Address"
+        required
+      />
+    </div>
+
+    <!-- Contacto -->
+    <div>
+      <label for="phone" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Contacto
+      </label>
+      <input
+        type="text"
+        id="phone"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        placeholder="Seu contacto"
+        formControlName="Phone"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="Email" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Email
+      </label>
+      <input
+        type="email"
+        id="Email"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        placeholder="exemplo@email.com"
+        formControlName="Email"
+        required
+      />
+    </div>
+
+    <!-- Congregação -->
+    <div>
+      <label for="congregation" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        Congregação
+      </label>
+      <input
+        type="text"
+        id="congregation"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        placeholder="Digite a congregação"
+        formControlName="Congregation"
+        required
+      />
+    </div>
+
+    <!-- Batizado -->
+    <div>
+      <label for="baptized" class="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-1">
+        É Batizado?
+      </label>
+      <select
+        id="baptized"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+        formControlName="Baptized"
+      >
+        <option [ngValue]="null">Selecione</option>
+        <option [ngValue]="false">Não</option>
+        <option [ngValue]="true">Sim</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Botão -->
+  <button
+    type="submit"
+    class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-lg"
+  >
+    {{ titleBtn }}
+  </button>
+</form>
