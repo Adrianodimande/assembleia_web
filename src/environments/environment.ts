@@ -1,3 +1,3 @@
 export const environment = {
-  url: 'http://localhost:5166/api',
+  url: 'https://assembleia-api-vraa.onrender.com/api',
 };
