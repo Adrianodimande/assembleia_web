@@ -17,15 +17,17 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              },
-              {
+              "src/favicon.ico",
+              "src/assets",  {
                 "glob": "_redirects",
                 "input": "src",
                 "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "public"
               }
+            
             ],
             "styles": ["src/styles.css"]
           },
