@@ -34,7 +34,10 @@ export class HomeUser {
   }
 
   readAllMember() {
-    this.userService.getAll().subscribe((item) => (this.userData = item));
+    this.userService.getAll().subscribe((item) => {
+      this.userData = item;
+      console.log(item);
+    });
   }
 
   createMember(model: UserModel) {

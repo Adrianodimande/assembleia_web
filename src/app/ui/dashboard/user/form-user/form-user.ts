@@ -30,8 +30,10 @@ export class FormUser {
     this.formGroupUser = new FormGroup({
       id: new FormControl(0),
       Name: new FormControl(''),
+      Email: new FormControl(''),
       Password: new FormControl(''),
       PasswordConfirm: new FormControl(''),
+      DateCreated: new FormControl(new Date()),
       Status: new FormControl<boolean | null>(true),
     });
 
@@ -55,10 +57,10 @@ export class FormUser {
   createMember() {
     this.memberService.create(this.formGroupUser.value).subscribe({
       next: (res) => {
-        console.log('cadastrado com successo');
-        this.router.navigate(['/']);
+
+        this.router.navigate(['/user']);
       },
-      error: (res) => console.log('Erro ao cadastrar'),
+      error: (res) => console.log('Erro ao cadastrar', res),
     });
   }
 
@@ -68,7 +70,7 @@ export class FormUser {
       .subscribe({
         next: (res) => {
           console.log('Atualizado com successo');
-          this.router.navigate(['/']);
+          this.router.navigate(['/user']);
         },
         error: (res) => console.log('Erro ao Atualizar'),
       });
@@ -78,8 +80,10 @@ export class FormUser {
     this.memberService.getById(this.idUserForUpdate).subscribe((item) => {
       this.userForUpdate = item;
       this.formGroupUser.patchValue({
-        FirstName: this.userForUpdate.name,
-        // LastName: this.userForUpdate.status,
+        Name: this.userForUpdate.name,
+        Email: this.userForUpdate.email,
+        DateCreated: this.userForUpdate.dateCreated,
+        Status: this.userForUpdate.status,
       });
     });
   }
